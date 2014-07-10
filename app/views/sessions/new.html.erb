@@ -1,7 +1,7 @@
 <%= form_for :session, url: session_path do |form| %>
   <div>
-    <%= form.label :unername %>
-    <%= form.unername_field :unername %>
+    <%= form.label :username %>
+    <%= form.text_field :username %>
   </div>
   <div>
     <%= form.label :password %>
@@ -10,4 +10,6 @@
   <div>
     <%= form.submit "Sign in" %>
   </div>
+
+
 <% end %>

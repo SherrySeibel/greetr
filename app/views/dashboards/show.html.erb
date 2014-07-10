@@ -1,0 +1,6 @@
+<h1>Welcome to greetr!<h1>
+
+    <% form_for @greeting do |form| %>
+      <%= form.text_field :body %>
+      <%= form.submit "Send greeting" %>
+    <% end %> 

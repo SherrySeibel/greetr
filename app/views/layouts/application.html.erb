@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Greetr</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<title>Greetr</title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
 </head>
 <body>
+
+<section>
+  <div>
+    <% if signed_in? %>
+      <p>Signed in as: <%= current_user.username %></p>
+    <%= button_to "Sign out", :session, method: :delete %>
+  <% else %>
+      <%= link_to "Sign up", sign_up_path %>
+  <% end %>
+  </div>
+</section>
 
 <%= yield %>
 
