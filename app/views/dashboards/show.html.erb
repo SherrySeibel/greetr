@@ -1,6 +1,9 @@
 <h1>Welcome to greetr!<h1>
 
-    <% form_for @greeting do |form| %>
-      <%= form.text_field :body %>
+    <%= form_for @greetings do |form| %>
+      <div>
+      <%= label_tag :body, "Send" %>
+      <%= form.text_field :body  %>
       <%= form.submit "Send greeting" %>
-    <% end %> 
+    </div>
+  <% end %>

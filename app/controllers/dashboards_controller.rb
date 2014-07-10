@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
   def show
-    @greeting = Greeting.new
+    @greetings = Greeting.new
   end
 end

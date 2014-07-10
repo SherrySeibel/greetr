@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resource :dashboard, only: [:show]
 
-  resources :greetings, only: [:index]
+  resources :greetings, only: [:create]
 
   root to: "sessions#new"
   get "/sign_up", to: "users#new"

@@ -17,9 +17,11 @@ ActiveRecord::Schema.define(version: 20140710160731) do
   enable_extension "plpgsql"
 
   create_table "greetings", force: true do |t|
-    t.string   "body",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "body",        null: false
+    t.integer  "sender_id",   null: false
+    t.integer  "receiver_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: true do |t|
