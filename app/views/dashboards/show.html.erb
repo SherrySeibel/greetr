@@ -3,7 +3,8 @@
     <%= form_for @greetings do |form| %>
       <div>
       <%= label_tag :body, "Send" %>
-      <%= form.text_field :body  %>
+      <%= form.text_field :body  %> to
+      <%= form.collection_select(:receiver_id, User.all, :id, :username, prompt: true) %>
       <%= form.submit "Send greeting" %>
     </div>
   <% end %>
