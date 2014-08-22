@@ -7,6 +7,7 @@ class CreateGreetings < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :greetings, [:sender_id, :receiver_id]
+    add_index :greetings, :sender_id
+    add_index :greetings, :receiver_id
   end
 end

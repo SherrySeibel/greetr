@@ -3,9 +3,6 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
 
-  has_many :greetings, foreign_key: "sender_id"
-
-  def received_greetings
-    Greeting.where(receiver_id: self.id).order("created_at desc")
-  end
+  has_many :sent_greetings, class_name: "Greeting", foreign_key: :sender_id
+  has_many :received_greetings, class_name: "Greeting", foreign_key: :receiver_id
 end

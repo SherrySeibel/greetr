@@ -1,0 +1,8 @@
+<% if target.errors.present? %>
+  <p>Form could not be submitted because:</p>
+  <ul>
+    <% target.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>

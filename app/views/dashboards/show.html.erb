@@ -1,12 +1,12 @@
 <h1>Welcome to greetr!<h1>
 
-    <%= form_for @greeting do |form| %>
-      <div>
-      <%= label_tag :body, "Send" %>
-      <%= form.text_field :body  %> to
-      <%= form.collection_select(:receiver_id, User.all, :id, :username, prompt: true) %>
-      <%= form.submit "Send greeting" %>
-    </div>
-  <% end %>
+<%= form_for @greeting do |form| %>
+  <div>
+    <%= label_tag :body, "Send" %>
+    <%= form.text_field :body  %> to
+    <%= form.collection_select(:receiver_id, @users, :id, :username, prompt: true) %>
+    <%= form.submit "Send greeting" %>
+  </div>
+<% end %>
 
-  <%= render @greetings %>
+<%= render @greetings %>

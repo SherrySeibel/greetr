@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(version: 20140710160731) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "greetings", ["sender_id", "receiver_id"], name: "index_greetings_on_sender_id_and_receiver_id", using: :btree
+  add_index "greetings", ["receiver_id"], name: "index_greetings_on_receiver_id", using: :btree
+  add_index "greetings", ["sender_id"], name: "index_greetings_on_sender_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",           null: false
