@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = authenticate_session(session_params)
+    user = authenticate_session(session_params, email_or_username: [:email, :username])
 
     if sign_in(user)
-      redirect_to :dashboard
+      redirect_to root_path
     else
       render :new
     end
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
   def session_params
     params.require(:session).
       permit(
-        :username,
+        :email_or_username,
         :password,
     )
   end

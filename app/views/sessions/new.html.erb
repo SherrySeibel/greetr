@@ -1,7 +1,7 @@
 <%= form_for :session, url: session_path do |form| %>
   <div>
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+    <%= form.label :email_or_username %>
+    <%= form.text_field :email_or_username %>
   </div>
   <div>
     <%= form.label :password %>
@@ -10,6 +10,6 @@
   <div>
     <%= form.submit "Sign in" %>
   </div>
-
-
 <% end %>
+
+<p>Don't have an account? <%= link_to "Sign Up", [:new, :user] %>!</p>
